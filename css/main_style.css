@@ -1,0 +1,158 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8MXx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80);
+    background-size: cover;
+    background-repeat: no-repeat fixed;
+    background-attachment: fixed;
+}
+
+header{
+    top: 0;
+    margin-top: 0%;
+    padding: 2px;
+    position: fixed;
+    overflow: hidden;
+    background-image: url(https://steamuserimages-a.akamaihd.net/ugc/960856720981536415/90FC611EA20B1797EABD82F92508DBB2DAFBBB0E/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+}
+
+header nav .nav_urls ul{
+    display: flex;
+}
+header nav .nav_urls li{
+    font-size: 20px;
+    list-style: none;
+    
+}
+header nav .nav_urls li a{
+    color: rgb(255, 255, 255);
+    margin: 8px;
+    text-decoration: none;
+}
+header nav .nav_urls li a:hover{
+    /* color: rgb(255, 0, 0); */
+    color: #dcd427;
+}
+header nav .nav_urls li a:active{
+    color: #b6b6b6;
+}
+header nav .social ul{
+    display: flex;
+    
+}
+header nav .social li{
+    font-size: 20px;
+    list-style: none;
+}
+header nav .social li a{
+    color: rgb(255, 255, 255);
+    margin: 7px;
+}
+header nav .social li #ig:hover{
+    background: linear-gradient(to right, #f32170,#ff6b08, #cf23cf, #eedd44);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+header nav .social li #ig:active{
+    background: linear-gradient(to right, #b6b6b6,#b6b6b6, #b6b6b6, #b6b6b6);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+header nav .social li #twitt:hover{
+    color: #1DA1F2;
+}
+header nav .social li #twitt:active{
+    color: #b6b6b6;
+}
+header nav .social li #in:hover{
+    color: rgb(0,119,181);
+}
+
+header nav .social li #in:active{
+    color: #b6b6b6;
+}
+header nav .social li #mail:hover{
+    color: rgb(236, 238, 187);
+}
+header nav .social li #mail:active{
+    color: #b6b6b6;   
+}
+
+::selection{
+    background-color: #b6b6b642;
+
+}
+
+footer{
+    background-image: url(https://images.pexels.com/photos/176851/pexels-photo-176851.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500);
+    margin: 0;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+footer .footer_top{
+    display: flex;
+    justify-content: space-between;
+    padding-right:5%;
+    padding-left:5%;
+}
+footer .footer_top .footer_navs ul li{
+    list-style: none;
+}
+footer .footer_top .footer_navs ul li a{
+    color:white;
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 1.8;
+}
+footer .footer_top .footer_navs ul li a:active{
+    color: #b6b6b6;
+}
+
+#footer_desc{
+    color: white;
+    font-size: 24px;
+}
+
+
+#hr-main{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(253, 249, 249, 0.75), rgba(0, 0, 0, 0)); 
+}
+footer .footer_social ul{
+    display: flex;
+    justify-content: center;
+
+}
+footer .footer_social ul li{
+    list-style: none;
+}
+footer .footer_social ul li a{
+    margin: 10px;
+    color: white;
+    font-size: 20px;
+}
+footer .footer_social ul li a:active{
+    color: #b6b6b6;
+}
+
+@media only screen and (max-width: 560px) {
+    header nav .social{
+        display: none;
+    }
+    footer p{
+        display: none;
+    }
+
+}

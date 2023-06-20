@@ -1,0 +1,125 @@
+.about_container{
+    color: white;
+    background-color: #b6b6b60d;
+    margin-top: 80px;
+}
+.about_container .meWithLogo{
+    width: 100%;
+    display: none;
+}
+.about_container .meWithLogo img{
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+.about_container .myInfo h1{
+    text-align: center;
+    font-size: 35px;
+}
+.about_container .myInfo p{
+    text-align:justify;
+    padding: 15px;
+    font-size: 26px;
+    line-height: 1.5;
+}
+.about_container .myInfo a{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    padding: 10px 24px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 15px;
+    transition: 0.45s;
+    border-radius: 15px;
+}
+.about_container .myInfo a:hover{
+    background-color: rgba(128, 128, 128, 0.789);
+}
+.about_container .myInfo a:active{
+    background-color:white;
+    color: black;
+}
+.about_container .myEdu{
+    color: white;
+}
+.about_container .myEdu h1{
+    text-align: center;
+    font-size: 35px;
+}
+.about_container .myEdu p{
+    text-align: justify;
+    padding: 15px;
+    font-size: 26px;
+    line-height: 1.5;
+}
+.about_container .myEdu ol li , .about_container .myEdu ul li{
+    font-size: 26px;
+    line-height: 1.5;
+}
+.about_container .interests{
+    color: white;
+}
+.about_container .interests h1{
+    font-size:35px;
+    text-align: center;
+}
+.about_container .interests p{
+    text-align: justify;
+    padding: 15px;
+    font-size: 26px;
+    line-height: 1.5;
+}
+.about_container .interests p a{
+    color: white;
+}
+.about_container .interests li{
+    font-size: 26px;
+}
+.about_container .interests li a{
+    color: white;
+    font-size: 26px;
+}
+
+.web_logo{
+    color: white;
+}
+.web_logo h1{
+    font-size: 35px;
+    text-align: center;
+}
+.web_logo ul li{
+    font-size: 26px;
+}
+.web_logo p{
+    text-align: justify;
+    padding: 15px;
+    font-size: 26px;
+    line-height: 1.5;
+}
+
+
+
+@media only screen and (max-width: 560px) {
+    .about_container .myInfo p{
+        font-size: 18px;
+    }
+    .about_container .myEdu p{
+        font-size: 18px;
+    }
+    .about_container .myEdu ol li , .about_container .myEdu ul li{
+        font-size: 18px;
+    }
+    .about_container .interests p{
+        font-size: 18px;
+    }
+    .about_container .interests li{
+        font: 18px;
+    }
+    .web_logo p{
+        font-size: 18px;
+    }
+
+
+}

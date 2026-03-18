@@ -480,10 +480,73 @@
             background: #7dd3fc;
             color: #0c0c0c;
         }
+
+        /* ---- CUSTOM CURSOR ---- */
+        * {
+            cursor: none !important;
+        }
+
+        #cursor-dot {
+            position: fixed;
+            width: 9px;
+            height: 9px;
+            background: #67e8f9;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 6px #67e8f9, 0 0 14px rgba(100, 220, 255, 0.7);
+        }
+
+        #cursor-ring {
+            position: fixed;
+            width: 34px;
+            height: 34px;
+            border: 1.5px solid rgba(100, 180, 255, 0.75);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition: width 0.18s ease, height 0.18s ease, border-color 0.18s ease;
+            box-shadow: 0 0 10px rgba(100, 200, 255, 0.25);
+        }
+
+        #cursor-ring.hovered {
+            width: 52px;
+            height: 52px;
+            border-color: #7dd3fc;
+            box-shadow: 0 0 18px rgba(100, 220, 255, 0.45);
+        }
+
+        .cursor-trail {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99997;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(100, 210, 255, 0.7), rgba(100, 180, 255, 0.2));
+            animation: trailFade 0.55s ease-out forwards;
+        }
+
+        @keyframes trailFade {
+            from {
+                opacity: 0.65;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            to {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.1);
+            }
+        }
     </style>
 </head>
 
 <body>
+
+    <!-- Custom Cyber Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
 
     <!-- static subtle background layers (no glow, no parallax scroll) -->
     <div id="bg1" class="bg-layer"></div>
@@ -1135,6 +1198,61 @@
                 }
                 navItems.forEach(item => { item.classList.remove('active'); if (item.href.includes(current)) item.classList.add('active'); });
             });
+
+            // ---- CUSTOM CURSOR ----
+            (function initCursor() {
+                const dot = document.getElementById('cursor-dot');
+                const ring = document.getElementById('cursor-ring');
+                let ringX = window.innerWidth / 2, ringY = window.innerHeight / 2;
+                let dotX = ringX, dotY = ringY;
+                let trailTick = 0;
+
+                document.addEventListener('mousemove', (e) => {
+                    dotX = e.clientX;
+                    dotY = e.clientY;
+                    dot.style.left = dotX + 'px';
+                    dot.style.top = dotY + 'px';
+
+                    trailTick++;
+                    if (trailTick % 3 === 0) spawnTrail(dotX, dotY);
+                });
+
+                // Ring lags behind the dot (smooth lerp)
+                (function animateRing() {
+                    ringX += (dotX - ringX) * 0.11;
+                    ringY += (dotY - ringY) * 0.11;
+                    ring.style.left = ringX + 'px';
+                    ring.style.top = ringY + 'px';
+                    requestAnimationFrame(animateRing);
+                })();
+
+                // Expand ring on interactive elements
+                document.querySelectorAll('a, button, input, textarea, .glass, .skill-item, .nav-item').forEach(el => {
+                    el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+                    el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+                });
+
+                // Also bind on dynamically rendered project cards
+                setTimeout(() => {
+                    document.querySelectorAll('.glass').forEach(el => {
+                        el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+                        el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+                    });
+                }, 800);
+
+                function spawnTrail(x, y) {
+                    const size = Math.random() * 7 + 3;
+                    const t = document.createElement('div');
+                    t.className = 'cursor-trail';
+                    t.style.left = x + 'px';
+                    t.style.top = y + 'px';
+                    t.style.width = size + 'px';
+                    t.style.height = size + 'px';
+                    document.body.appendChild(t);
+                    setTimeout(() => t.remove(), 560);
+                }
+            })();
+
         })();
     </script>
 </body>

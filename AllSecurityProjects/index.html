@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Ashim Nepal · Security Projects Showcase | All Projects · अशिम नेपाल</title>
+    <meta name="title" content="Ashim Nepal · Security Projects Showcase | All Projects · अशिम नेपाल">
+
+    <!-- Tailwind + fonts + icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Space+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="../images/Blue-AN.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <meta name="description"
+        content="Explore all security projects built by Ashim Nepal! From simple tools to advanced, cryptography, brute-force, firewalls, vulnerability scanners and more.">
+    <meta name="keywords"
+        content="security projects, cybersecurity tools, Python security, honeypot, firewall, brute force, cryptography, web vulnerability scanner, Ashim Nepal, ashim nepal, security portfolio">
+    <meta name="author" content="Ashim Nepal">
+    <meta name="publisher" content="Ashim Nepal(अशिम नेपाल)">
+
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ashimnepal.com.np/AllSecurityProjects/">
+    <meta property="og:title" content="Ashim Nepal · Security Projects Showcase · अशिम नेपाल">
+    <meta property="og:description"
+        content="Explore all security projects built by Ashim Nepal — honeypots, firewalls, brute-force tools, cryptography, vulnerability scanners & more.">
+    <meta property="og:image" content="https://ashimnepal.com.np/images/AN-Logo-cyan.png">
+    <meta property="og:image:width" content="150">
+    <meta property="og:image:height" content="150">
+    <meta property="og:site_name" content="Ashim Nepal Portfolio · अशिम नेपाल">
+    <meta property="og:locale" content="en_US">
+
+    <link rel="canonical" href="https://ashimnepal.com.np/AllSecurityProjects/">
+
+    <meta name="geo.region" content="NP-BA">
+    <meta name="geo.placename" content="Kathmandu">
+
+    <link rel="icon" type="image/x-icon" href="../images/AN-Logo-cyan.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    <style>
+        * {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+
+        .space-mono {
+            font-family: 'Space Mono', monospace;
+        }
+
+        body {
+            background: #0a0c12;
+            overflow-x: hidden;
+            color: #e2e8f0;
+        }
+
+        /* Glass effects matching portfolio */
+        .glass {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px) saturate(180%);
+            -webkit-backdrop-filter: blur(12px) saturate(180%);
+            border: 1px solid rgba(100, 180, 255, 0.2);
+            border-radius: 2rem;
+        }
+
+        .glass-card {
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(100, 180, 255, 0.25);
+            border-radius: 2.5rem;
+            transition: transform 0.3s ease, border-color 0.2s;
+            color: #e2e8f0;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(100, 180, 255, 0.6);
+        }
+
+        /* Scroll reveal animation */
+        .parallax-item {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.1, 1), transform 0.8s cubic-bezier(0.2, 0.9, 0.1, 1);
+        }
+
+        .parallax-item.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Background layers */
+        .bg-layer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        #bg1 {
+            background: radial-gradient(circle at 30% 40%, #1a2f44 0%, #030712 80%);
+        }
+
+        #bg2 {
+            background-image: linear-gradient(rgba(70, 130, 200, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(70, 130, 200, 0.03) 1px, transparent 1px);
+            background-size: 70px 70px;
+        }
+
+        /* Cyber glow */
+        .glow-cyber {
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 20px #00ffff;
+            font-family: 'Space Mono', monospace;
+            font-weight: 500;
+        }
+
+        .cursor-glow {
+            color: #00ffff;
+            text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff;
+            font-size: 1.8rem;
+            line-height: 1;
+            animation: blink 1s infinite;
+            font-weight: 300;
+            margin-left: 2px;
+            opacity: 1;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        #typing-container {
+            display: flex;
+            align-items: center;
+            font-family: 'Space Mono', monospace;
+        }
+
+        /* Desktop header */
+        .desktop-header {
+            display: flex;
+        }
+
+        /* Mobile bottom nav */
+        .bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-top: 1px solid rgba(100, 180, 255, 0.2);
+            justify-content: space-around;
+            padding: 0.7rem 1rem;
+            z-index: 50;
+        }
+
+        .nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: rgba(220, 240, 255, 0.8);
+            font-size: 0.7rem;
+            transition: all 0.2s ease;
+            padding: 6px 12px;
+            background: transparent;
+            text-decoration: none;
+        }
+
+        .nav-item i {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            color: rgba(160, 200, 255, 0.9);
+            filter: drop-shadow(0 2px 5px rgba(0, 100, 255, 0.2));
+            transition: all 0.2s ease;
+        }
+
+        .nav-item.active {
+            color: white;
+        }
+
+        .nav-item.active i {
+            color: white;
+            filter: drop-shadow(0 0 8px rgba(100, 180, 255, 0.8));
+        }
+
+        .nav-item:hover,
+        .nav-item:active {
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .desktop-header {
+                display: none !important;
+            }
+
+            .bottom-nav {
+                display: flex;
+            }
+
+            main {
+                padding-bottom: 6rem;
+            }
+        }
+
+        /* Sidebar project items */
+        .project-item {
+            padding: 14px 16px;
+            margin-bottom: 8px;
+            border-radius: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(100, 180, 255, 0.12);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-item::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(120deg, transparent, rgba(100, 200, 255, 0.15), transparent);
+            top: -100%;
+            left: 0;
+            transition: 0.5s;
+        }
+
+        .project-item:hover::before {
+            top: 100%;
+        }
+
+        .project-item:hover {
+            transform: translateY(-3px) scale(1.02);
+            border-color: rgba(100, 180, 255, 0.5);
+            box-shadow: 0 8px 25px rgba(0, 200, 255, 0.15);
+        }
+
+        .project-item.active {
+            border-color: rgba(100, 180, 255, 0.6);
+            background: rgba(20, 40, 70, 0.7);
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.15);
+        }
+
+        .project-item .project-name {
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #e2e8f0;
+            margin-bottom: 2px;
+        }
+
+        .project-item .project-tech {
+            font-size: 0.7rem;
+            color: rgba(103, 232, 249, 0.7);
+            font-family: 'Space Mono', monospace;
+        }
+
+        .project-item .github-link {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(100, 180, 255, 0.5);
+            font-size: 1.1rem;
+            transition: all 0.2s ease;
+            z-index: 5;
+        }
+
+        .project-item:hover .github-link {
+            color: #67e8f9;
+            filter: drop-shadow(0 0 6px rgba(100, 200, 255, 0.6));
+        }
+
+        /* Content area — markdown styling */
+        .readme-content h1,
+        .readme-content h2,
+        .readme-content h3 {
+            color: #67e8f9;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .readme-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .readme-content h2 {
+            font-size: 1.4rem;
+            border-bottom: 1px solid rgba(100, 180, 255, 0.15);
+            padding-bottom: 0.5rem;
+        }
+
+        .readme-content h3 {
+            font-size: 1.15rem;
+        }
+
+        .readme-content p {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+            color: #cbd5e1;
+        }
+
+        .readme-content ul,
+        .readme-content ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .readme-content li {
+            margin-bottom: 0.4rem;
+            color: #cbd5e1;
+        }
+
+        .readme-content pre {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(100, 180, 255, 0.15);
+            padding: 1rem;
+            border-radius: 1rem;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+        }
+
+        .readme-content code {
+            color: #67e8f9;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9em;
+        }
+
+        .readme-content pre code {
+            color: #a5d8ff;
+        }
+
+        .readme-content img {
+            max-width: 100%;
+            border-radius: 1rem;
+            margin: 1rem 0;
+            border: 1px solid rgba(100, 180, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .readme-content img:hover {
+            border-color: rgba(100, 180, 255, 0.5);
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.2);
+            transform: scale(1.01);
+        }
+
+        .readme-content a {
+            color: #67e8f9;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            transition: color 0.2s;
+        }
+
+        .readme-content a:hover {
+            color: #a5f3fc;
+        }
+
+        .readme-content blockquote {
+            border-left: 3px solid rgba(100, 180, 255, 0.4);
+            padding-left: 1rem;
+            margin: 1rem 0;
+            color: #94a3b8;
+            font-style: italic;
+        }
+
+        .readme-content table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .readme-content th,
+        .readme-content td {
+            border: 1px solid rgba(100, 180, 255, 0.15);
+            padding: 0.5rem 0.75rem;
+            text-align: left;
+        }
+
+        .readme-content th {
+            background: rgba(20, 40, 70, 0.6);
+            color: #67e8f9;
+        }
+
+        /* Layout */
+        .app-layout {
+            display: flex;
+            gap: 1.5rem;
+            min-height: calc(100vh - 200px);
+        }
+
+        .sidebar-panel {
+            width: 300px;
+            flex-shrink: 0;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+
+        .content-panel {
+            flex: 1;
+            min-width: 0;
+            max-height: calc(100vh - 200px);
+            overflow-y: auto;
+        }
+
+        /* Custom scrollbar matching portfolio */
+        .sidebar-panel::-webkit-scrollbar,
+        .content-panel::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .sidebar-panel::-webkit-scrollbar-track,
+        .content-panel::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .sidebar-panel::-webkit-scrollbar-thumb,
+        .content-panel::-webkit-scrollbar-thumb {
+            background: #7dd3fc;
+            border-radius: 10px;
+        }
+
+        /* Selection color matching portfolio */
+        ::selection {
+            background: #7dd3fc;
+            color: #0c0c0c;
+        }
+
+        ::-moz-selection {
+            background: #7dd3fc;
+            color: #0c0c0c;
+        }
+
+        /* Mobile sidebar toggle */
+        .mobile-sidebar-toggle {
+            display: none;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .app-layout {
+                flex-direction: column;
+                gap: 0;
+                min-height: auto;
+            }
+
+            .sidebar-panel {
+                width: 100%;
+                max-height: none;
+                overflow-y: visible;
+            }
+
+            .sidebar-panel.collapsed .sidebar-projects {
+                display: none;
+            }
+
+            .sidebar-panel.collapsed {
+                margin-bottom: 1rem;
+            }
+
+            .content-panel {
+                max-height: none;
+                overflow-y: visible;
+            }
+
+            .mobile-sidebar-toggle {
+                display: flex;
+            }
+
+            footer {
+                padding-bottom: 90px !important;
+            }
+        }
+
+        /* Loading spinner */
+        .loading-spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 3px solid rgba(100, 180, 255, 0.15);
+            border-top-color: #67e8f9;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Empty state */
+        .empty-state {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            min-height: 300px;
+            color: #64748b;
+        }
+
+        .empty-state i {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            color: rgba(100, 180, 255, 0.2);
+        }
+
+        .empty-state p {
+            font-size: 1.1rem;
+        }
+
+        .empty-state .sub-text {
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            color: #475569;
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(5, 15, 28, 0.95);
+            backdrop-filter: blur(4px);
+            border-top: 1px solid #2b5070;
+        }
+
+        /* ---- CUSTOM CURSOR ---- */
+        * {
+            cursor: none !important;
+        }
+
+        #cursor-dot {
+            position: fixed;
+            width: 9px;
+            height: 9px;
+            background: #67e8f9;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 0 6px #67e8f9, 0 0 14px rgba(100, 220, 255, 0.7);
+        }
+
+        #cursor-ring {
+            position: fixed;
+            width: 34px;
+            height: 34px;
+            border: 1.5px solid rgba(100, 180, 255, 0.75);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition: width 0.18s ease, height 0.18s ease, border-color 0.18s ease;
+            box-shadow: 0 0 10px rgba(100, 200, 255, 0.25);
+        }
+
+        #cursor-ring.hovered {
+            width: 52px;
+            height: 52px;
+            border-color: #7dd3fc;
+            box-shadow: 0 0 18px rgba(100, 220, 255, 0.45);
+        }
+
+        .cursor-trail {
+            position: fixed;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99997;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, rgba(100, 210, 255, 0.7), rgba(100, 180, 255, 0.2));
+            animation: trailFade 0.55s ease-out forwards;
+        }
+
+        @keyframes trailFade {
+            from {
+                opacity: 0.65;
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            to {
+                opacity: 0;
+                transform: translate(-50%, -50%) scale(0.1);
+            }
+        }
+
+        /* Content fade-in animation */
+        @keyframes contentFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content-fade-in {
+            animation: contentFadeIn 0.5s ease forwards;
+        }
+
+        /* Project count badge */
+        .project-count {
+            background: rgba(100, 180, 255, 0.15);
+            border: 1px solid rgba(100, 180, 255, 0.3);
+            padding: 2px 10px;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            color: #67e8f9;
+            font-family: 'Space Mono', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-logo-header {
+                display: flex !important;
+                margin-top: -45px;
+                /* Pulls it upward */
+                margin-bottom: 15px;
+                position: relative;
+                top: -5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Custom Cyber Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Background layers -->
+    <div id="bg1" class="bg-layer"></div>
+    <div id="bg2" class="bg-layer"></div>
+
+    <!-- DESKTOP HEADER -->
+    <header class="desktop-header sticky top-4 z-40 flex justify-center px-4">
+        <nav class="glass w-full max-w-6xl py-3 px-8 flex justify-between items-center text-base">
+            <a href="../index.html"
+                class="flex items-center gap-3 text-white no-underline hover:text-cyan-300 transition-colors">
+                <span
+                    class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-500/20 shadow-[0_0_15px_rgba(34,211,238,0.5)] border border-cyan-400/30 transition-all duration-300 hover:shadow-[0_0_25px_rgba(34,211,238,0.8)] hover:bg-cyan-500/30 hover:scale-105">
+                    <img src="../images/Blue-AN.svg" alt="logo Ashim Nepal" class="w-full h-full object-contain">
+                </span>
+                <span class="font-bold text-xl">अशिम <span class="text-cyan-300">नेपाल</span></span>
+            </a>
+            <div class="flex gap-6 text-gray-200 items-center">
+                <a href="../index.html" class="hover:text-cyan-300 flex items-center gap-1"><i
+                        class="fa-solid fa-arrow-left text-cyan-300"></i> portfolio</a>
+                <a href="../index.html#projects" class="hover:text-cyan-300 flex items-center gap-1"><i
+                        class="fa-solid fa-diagram-project text-cyan-300"></i> projects</a>
+                <a href="../index.html#contact" class="hover:text-cyan-300 flex items-center gap-1"><i
+                        class="fa-regular fa-message text-cyan-300"></i> contact</a>
+                <a href="https://github.com/ashim-nepal/Security-Projects-All" target="_blank"
+                    class="hover:text-cyan-300 flex items-center gap-1"><i
+                        class="fa-brands fa-github text-cyan-300"></i> repo</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- BOTTOM MOBILE NAV -->
+    <div class="bottom-nav">
+        <a href="../index.html" class="nav-item"><i class="fa-solid fa-house"></i><span>home</span></a>
+        <a href="#sidebar" class="nav-item" id="mobileToggleSidebar"><i
+                class="fa-solid fa-folder-open"></i><span>projects</span></a>
+        <a href="../index.html#contact" class="nav-item"><i class="fa-regular fa-message"></i><span>contact</span></a>
+        <a href="https://github.com/ashim-nepal/Security-Projects-All" target="_blank" class="nav-item"><i
+                class="fa-brands fa-github"></i><span>repo</span></a>
+
+    </div>
+
+    <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+
+        <!-- Mobile Logo Header - Shows only on mobile above hero -->
+        <div class="hidden mobile-logo-header w-full flex justify-center mb-2">
+            <a href="../index.html"
+                class="flex items-center gap-3 text-white no-underline hover:text-cyan-300 transition-colors">
+                <div
+                    class="flex items-center gap-3 bg-black/30 px-6 py-3 rounded-full backdrop-blur-sm border border-cyan-800/30">
+                    <span
+                        class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-500/20 shadow-[0_0_15px_rgba(34,211,238,0.5)] border border-cyan-400/30">
+                        <img src="../images/Blue-AN.svg" alt="logo Ashim Nepal" class="w-full h-full object-contain">
+                    </span>
+                    <span class="font-bold text-xl text-white">अशिम <span class="text-cyan-300">नेपाल</span></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- HERO SECTION -->
+        <section class="glass-card p-8 md:p-12 mb-8 parallax-item">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                <div>
+                    <span class="space-mono text-cyan-300 text-sm">security · projects · showcase</span>
+                    <h1 class="text-4xl md:text-5xl font-bold mt-2 leading-tight text-white">
+                        <i class="fa-solid fa-shield-halved text-cyan-300 mr-2"></i>security projects by
+                        <span class="text-cyan-300">ASHIM</span>
+                    </h1>
+                    <div class="h-10 mt-2">
+                        <span class="text-lg md:text-xl text-gray-200" id="typing-container">
+                            <span class="font-mono text-cyan-300 glow-cyber" id="typed-text"></span>
+                            <span class="cursor-glow">|</span>
+                        </span>
+                    </div>
+                </div>
+                <a href="https://github.com/ashim-nepal/Security-Projects-All" target="_blank"
+                    class="group flex items-center gap-3 bg-cyan-800/40 hover:bg-cyan-700/50 border border-cyan-600 px-6 py-3 rounded-full text-white text-base transition-all shrink-0">
+                    <i class="fa-brands fa-github text-cyan-300 text-xl"></i> view on github
+                    <i
+                        class="fa-solid fa-arrow-up-right-from-square text-sm group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- MAIN APP LAYOUT -->
+        <section class="app-layout parallax-item" id="app-layout">
+
+            <!-- SIDEBAR -->
+            <div class="sidebar-panel glass-card p-5" id="sidebar">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-folder-tree text-cyan-300"></i>
+                        <h2 class="text-lg font-semibold text-white">projects</h2>
+                        <span class="project-count" id="projectCount">15</span>
+                    </div>
+                    <!-- Mobile toggle button -->
+                    <button
+                        class="mobile-sidebar-toggle items-center gap-2 text-cyan-300 text-sm bg-cyan-800/30 px-3 py-1.5 rounded-full border border-cyan-700/50 hover:bg-cyan-700/50 transition-all"
+                        id="toggleSidebarBtn">
+                        <i class="fa-solid fa-chevron-down" id="toggleIcon"></i>
+                        <span id="toggleText">show</span>
+                    </button>
+                </div>
+
+                <div class="sidebar-projects" id="sidebarProjects">
+                    <!-- Search -->
+                    <div class="relative mb-4">
+                        <i
+                            class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-cyan-300/50 text-sm"></i>
+                        <input type="text" id="searchInput" placeholder="search projects..."
+                            class="w-full pl-9 pr-4 py-2.5 rounded-xl bg-black/30 border border-cyan-800/50 text-white text-sm focus:outline-none focus:border-cyan-500/60 transition-colors placeholder:text-gray-500">
+                    </div>
+
+                    <!-- Project list -->
+                    <div id="projectList"></div>
+                </div>
+            </div>
+
+            <!-- CONTENT -->
+            <div class="content-panel glass-card p-6 md:p-8" id="contentPanel">
+                <div id="content">
+                    <div class="empty-state">
+                        <i class="fa-solid fa-terminal"></i>
+                        <p class="text-gray-300">select a project to view</p>
+                        <p class="sub-text">choose from the sidebar to load the README</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="w-full py-12 relative border-t border-cyan-800/60 text-center">
+        <div class="max-w-6xl mx-auto px-4">
+            <a href="../index.html" class="inline-block">
+                <span
+                    class="inline-flex items-center justify-center w-8 h-8 rounded-lg bg-cyan-500/20 shadow-[0_0_15px_rgba(34,211,238,0.5)] border border-cyan-400/30">
+                    <img src="../images/Blue-AN.svg" alt="logo Ashim Nepal" class="w-full h-full object-contain">
+                </span>
+            </a>
+            <p class="text-2xl text-white mt-2">cyb3r · $ecuri7y · A$him</p>
+            <p class="text-gray-400">&copy; Copyright <span id="current-year"></span> · Ashim Nepal · All Rights
+                Reserved</p>
+            <p class="text-sm text-gray-500 mt-4"> · Designed and Developed in Nepal 🇳🇵</p>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            const username = "ashim-nepal";
+            const repo = "Security-Projects-All";
+
+            const projects = [
+                { name: "ASHQIT_TOOLKIT", tech: "Python, Bash", icon: "fa-solid fa-toolbox" },
+                { name: "BRUTE_FORCE_PROJECTS", tech: "Python", icon: "fa-solid fa-key" },
+                { name: "CRYPTOGRAPHY", tech: "Python", icon: "fa-solid fa-lock" },
+                { name: "DATA_EXTRATOR", tech: "Python", icon: "fa-solid fa-database" },
+                { name: "DECOYPORT_HONEYPOT", tech: "Python, Flask", icon: "fa-solid fa-spider" },
+                { name: "FACE_PDF_LOCKER", tech: "Python", icon: "fa-solid fa-face-smile" },
+                { name: "FIREWALL-DNS Blocker", tech: "Python, Flask", icon: "fa-solid fa-fire" },
+                { name: "LOG_ANALYZER", tech: "Python", icon: "fa-solid fa-chart-line" },
+                { name: "PACKETS_ANALYZER", tech: "Python", icon: "fa-solid fa-network-wired" },
+                { name: "PASSWORD SECURITY", tech: "Python", icon: "fa-solid fa-shield-halved" },
+                { name: "PDF-LOCKER_PROJECT", tech: "Python", icon: "fa-solid fa-file-pdf" },
+                { name: "PHISHING ATK - IG CLONE", tech: "React & MYSQL", icon: "fa-solid fa-fish" },
+                { name: "PHISHING ATTACK(MAlware-software)", tech: "HTML, CSS, JS, Python", icon: "fa-solid fa-bug" },
+                { name: "REQUESTERR", tech: "Python", icon: "fa-solid fa-globe" },
+                { name: "WEB_VUL_SCANNER", tech: "Python, Flask", icon: "fa-solid fa-magnifying-glass-chart" },
+            ];
+
+            // Update count
+            document.getElementById('projectCount').textContent = projects.length;
+
+            const list = document.getElementById("projectList");
+            const content = document.getElementById("content");
+            const searchInput = document.getElementById("searchInput");
+            let activeItem = null;
+
+            function getGithubUrl(projectName) {
+                return `https://github.com/${username}/${repo}/tree/main/${encodeURIComponent(projectName)}`;
+            }
+
+            async function loadProject(projectName, clickedItem) {
+                // Update active state
+                document.querySelectorAll('.project-item').forEach(el => el.classList.remove('active'));
+                if (clickedItem) clickedItem.classList.add('active');
+                activeItem = clickedItem;
+
+                content.innerHTML = `
+                    <div class="flex flex-col items-center justify-center" style="min-height: 200px;">
+                        <div class="loading-spinner mb-4"></div>
+                        <p class="text-gray-400 text-sm">loading ${projectName}...</p>
+                    </div>`;
+
+                try {
+                    const baseURL = `https://raw.githubusercontent.com/${username}/${repo}/main/${encodeURIComponent(projectName)}/`;
+                    const readmeURL = baseURL + "README.md";
+
+                    const res = await fetch(readmeURL);
+                    if (!res.ok) throw new Error('Not found');
+                    let text = await res.text();
+
+                    // Fix image paths
+                    text = text.replace(/!\[(.*?)\]\((.*?)\)/g, (m, a, p) => {
+                        if (p.includes("raw.githubusercontent.com") || (p.startsWith("http") && !p.includes("github.com"))) return m;
+                        if (p.includes("github.com") && p.includes("/blob/")) {
+                            return `![${a}](${p.replace("github.com", "raw.githubusercontent.com").replace("/blob/", "/")})`;
+                        }
+                        p = p.replace(/^\.\//, "").replace(/^\//, "");
+                        return `![${a}](${baseURL}${p})`;
+                    });
+
+                    const ghUrl = getGithubUrl(projectName);
+
+                    content.innerHTML = `
+                        <div class="content-fade-in">
+                            <div class="flex flex-wrap items-center justify-between gap-3 mb-6 pb-4 border-b border-cyan-800/30">
+                                <div class="flex items-center gap-3">
+                                    <i class="fa-solid fa-folder-open text-cyan-300 text-xl"></i>
+                                    <h2 class="text-2xl font-bold text-white">${projectName}</h2>
+                                </div>
+                                <a href="${ghUrl}" target="_blank"
+                                    class="flex items-center gap-2 bg-cyan-800/30 hover:bg-cyan-700/50 border border-cyan-700/50 px-4 py-2 rounded-full text-cyan-300 hover:text-white text-sm transition-all">
+                                    <i class="fa-brands fa-github text-lg"></i> view on GitHub
+                                    <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+                                </a>
+                            </div>
+                            <div class="readme-content">${marked.parse(text)}</div>
+                        </div>`;
+
+                    // Re-bind cursor hover for new elements
+                    bindCursorHovers();
+
+                } catch (err) {
+                    const ghUrl = getGithubUrl(projectName);
+                    content.innerHTML = `
+                        <div class="content-fade-in">
+                            <div class="empty-state">
+                                <i class="fa-solid fa-triangle-exclamation" style="color: rgba(255, 150, 100, 0.4);"></i>
+                                <p class="text-gray-300">couldn't load README for ${projectName}</p>
+                                <p class="sub-text mb-4">the README may not be available, or there was a network error</p>
+                                <a href="${ghUrl}" target="_blank"
+                                    class="flex items-center gap-2 bg-cyan-800/40 hover:bg-cyan-700/50 border border-cyan-600 px-5 py-2.5 rounded-full text-white text-sm transition-all">
+                                    <i class="fa-brands fa-github"></i> open project on GitHub
+                                </a>
+                            </div>
+                        </div>`;
+                }
+            }
+
+            function renderProjects(filter = '') {
+                list.innerHTML = '';
+                const filtered = projects.filter(p =>
+                    p.name.toLowerCase().includes(filter.toLowerCase()) ||
+                    p.tech.toLowerCase().includes(filter.toLowerCase())
+                );
+
+                if (filtered.length === 0) {
+                    list.innerHTML = `<p class="text-center text-gray-500 text-sm py-6">no matching projects</p>`;
+                    return;
+                }
+
+                filtered.forEach(project => {
+                    const div = document.createElement("div");
+                    div.className = "project-item";
+
+                    div.innerHTML = `
+                        <div class="flex items-center gap-3 pr-8">
+                            <i class="${project.icon} text-cyan-300/60 text-sm"></i>
+                            <div>
+                                <div class="project-name">${project.name}</div>
+                                <div class="project-tech">${project.tech}</div>
+                            </div>
+                        </div>
+                        <a href="${getGithubUrl(project.name)}" target="_blank" class="github-link" title="Open on GitHub" onclick="event.stopPropagation();">
+                            <i class="fa-brands fa-github"></i>
+                        </a>`;
+
+                    div.addEventListener('click', () => {
+                        loadProject(project.name, div);
+
+                        // On mobile, collapse sidebar after selection
+                        if (window.innerWidth <= 768) {
+                            const sidebar = document.getElementById('sidebar');
+                            sidebar.classList.add('collapsed');
+                            document.getElementById('toggleIcon').className = 'fa-solid fa-chevron-right';
+                            document.getElementById('toggleText').textContent = 'show';
+
+                            // Scroll to content
+                            document.getElementById('contentPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                    });
+
+                    list.appendChild(div);
+                });
+
+                // Re-bind cursor hovers
+                bindCursorHovers();
+            }
+
+            // Search
+            searchInput.addEventListener('input', (e) => {
+                renderProjects(e.target.value);
+            });
+
+            // Initial render
+            renderProjects();
+
+            // Mobile sidebar toggle
+            const toggleBtn = document.getElementById('toggleSidebarBtn');
+            const mobileToggle = document.getElementById('mobileToggleSidebar');
+
+            function toggleSidebar() {
+                const sidebar = document.getElementById('sidebar');
+                const icon = document.getElementById('toggleIcon');
+                const text = document.getElementById('toggleText');
+
+                sidebar.classList.toggle('collapsed');
+                if (sidebar.classList.contains('collapsed')) {
+                    icon.className = 'fa-solid fa-chevron-right';
+                    text.textContent = 'show';
+                } else {
+                    icon.className = 'fa-solid fa-chevron-down';
+                    text.textContent = 'hide';
+                }
+            }
+
+            if (toggleBtn) toggleBtn.addEventListener('click', toggleSidebar);
+            if (mobileToggle) {
+                mobileToggle.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const sidebar = document.getElementById('sidebar');
+                    if (sidebar.classList.contains('collapsed')) {
+                        toggleSidebar();
+                    }
+                    sidebar.scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            // Collapse sidebar on mobile by default
+            if (window.innerWidth <= 768) {
+                document.getElementById('sidebar').classList.add('collapsed');
+            }
+
+            // ---------- SCROLL PARALLAX ----------
+            const parallaxItems = document.querySelectorAll('.parallax-item');
+            function checkReveal() {
+                const windowHeight = window.innerHeight;
+                const revealThreshold = 100;
+                parallaxItems.forEach(item => {
+                    const rect = item.getBoundingClientRect();
+                    if (rect.top < windowHeight - revealThreshold) {
+                        item.classList.add('revealed');
+                    }
+                });
+            }
+            window.addEventListener('scroll', checkReveal);
+            window.addEventListener('load', checkReveal);
+            checkReveal();
+
+            // ---------- TYPING ANIMATION ----------
+            document.addEventListener('DOMContentLoaded', function () {
+                const typedElement = document.getElementById('typed-text');
+                if (!typedElement) return;
+
+                const phrases = [
+                    "explore security tools",
+                    "firewalls",
+                    "cryptography modules",
+                    "vulnerability scanners",
+                    "built to learn & defend",
+                ];
+
+                let phraseIndex = 0;
+                let charIndex = 0;
+                let isDeleting = false;
+                let currentText = '';
+
+                function typeEffect() {
+                    const currentPhrase = phrases[phraseIndex];
+
+                    if (isDeleting) {
+                        currentText = currentPhrase.substring(0, charIndex - 1);
+                        charIndex--;
+                    } else {
+                        currentText = currentPhrase.substring(0, charIndex + 1);
+                        charIndex++;
+                    }
+
+                    typedElement.textContent = currentText;
+
+                    let typeSpeed = 100;
+                    if (isDeleting) typeSpeed = 50;
+
+                    if (!isDeleting && charIndex === currentPhrase.length) {
+                        typeSpeed = 1500;
+                        isDeleting = true;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        typeSpeed = 300;
+                    }
+
+                    setTimeout(typeEffect, typeSpeed);
+                }
+
+                setTimeout(typeEffect, 500);
+            });
+
+            // Year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+
+            // ---- CUSTOM CURSOR ----
+            function bindCursorHovers() {
+                const ring = document.getElementById('cursor-ring');
+                document.querySelectorAll('a, button, input, textarea, .project-item, .glass, .nav-item').forEach(el => {
+                    el.removeEventListener('mouseenter', addHover);
+                    el.removeEventListener('mouseleave', removeHover);
+                    el.addEventListener('mouseenter', addHover);
+                    el.addEventListener('mouseleave', removeHover);
+                });
+
+                function addHover() { ring.classList.add('hovered'); }
+                function removeHover() { ring.classList.remove('hovered'); }
+            }
+
+            (function initCursor() {
+                const dot = document.getElementById('cursor-dot');
+                const ring = document.getElementById('cursor-ring');
+                let ringX = window.innerWidth / 2, ringY = window.innerHeight / 2;
+                let dotX = ringX, dotY = ringY;
+                let trailTick = 0;
+
+                document.addEventListener('mousemove', (e) => {
+                    dotX = e.clientX;
+                    dotY = e.clientY;
+                    dot.style.left = dotX + 'px';
+                    dot.style.top = dotY + 'px';
+
+                    trailTick++;
+                    if (trailTick % 3 === 0) spawnTrail(dotX, dotY);
+                });
+
+                (function animateRing() {
+                    ringX += (dotX - ringX) * 0.11;
+                    ringY += (dotY - ringY) * 0.11;
+                    ring.style.left = ringX + 'px';
+                    ring.style.top = ringY + 'px';
+                    requestAnimationFrame(animateRing);
+                })();
+
+                bindCursorHovers();
+
+                function spawnTrail(x, y) {
+                    const size = Math.random() * 7 + 3;
+                    const t = document.createElement('div');
+                    t.className = 'cursor-trail';
+                    t.style.left = x + 'px';
+                    t.style.top = y + 'px';
+                    t.style.width = size + 'px';
+                    t.style.height = size + 'px';
+                    document.body.appendChild(t);
+                    setTimeout(() => t.remove(), 560);
+                }
+            })();
+
+        })();
+    </script>
+</body>
+
+</html>
